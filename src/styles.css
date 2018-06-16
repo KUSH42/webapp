@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* Application-wide Styles */
 h1 {
-    color: #369;
+    color: rgba(30, 255, 0, 0.39);
     font-family: "Lucida Console", Arial, Helvetica, sans-serif;
     font-size: 250%;
   }
@@ -21,6 +21,14 @@ h1 {
   a:hover {
     color: #33FF00;
   }
+
+  canvas {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    }
+
   /* everywhere else */
   * {
     font-family: Arial, Helvetica, sans-serif;
