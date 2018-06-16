@@ -7,7 +7,6 @@ import { AfterViewInit, Component, ViewChild, ElementRef, HostListener } from '@
 })
 export class MatrixBackgroundCanvasComponent implements AfterViewInit {
 
-  title = 'xauth';
   drops: number[];
   font_size = 8;
   // chinese characters - taken from the unicode charset

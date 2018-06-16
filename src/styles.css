@@ -3,7 +3,7 @@
   /* Application-wide Styles */
 
   h1 {
-    color: rgba(30, 255, 0, 0.39);
+    color: #33FF00;
     font-family: "Lucida Console", Arial, Helvetica, sans-serif;
     font-size: 250%;
   }
@@ -29,20 +29,28 @@
   }
 
   .pulse {
-    -webkit-animation: pulse 2s ease-out;
-    -webkit-animation-iteration-count: infinite;
-    opacity: 0.3;
+    animation: pulse 8s ease alternate infinite, fadein 8s ease alternate;
   }
 
-  @-webkit-keyframes pulse {
+  @keyframes fadein {
+    0% { opacity: 0;}
+    75% { opacity: 0;}
+    100%   { opacity: 1;}
+}
+
+  @keyframes pulse {
     0% {
-      opacity: 0.3;
+      transform: translate(.02em,.04em) scale(1.02) skew(-2deg) rotate(2deg);
+      text-shadow:
+      0 .3em .2em rgba(0,0,0,.3), 4px 8px 40px rgba(0, 255, 0, 1.0), 2px 2px 18px rgba(33, 255, 0, 0.9);
     }
     50% {
-      opacity: 1.0;
+      text-shadow:
+      0 .5em .5em rgba(0,0,0,.3), -10px 2px 50px rgba(33, 255, 0, 0.95), 2px 2px 16px rgba(0, 255, 0, .85);
     }
     100% {
-      opacity: 0.3;
+      transform: translate(-.02em,-.04em) scale(0.98) skew(2deg) rotate(-2deg);
+      text-shadow:     0 .5em .5em rgba(0,0,0,.3), 6px -2px 40px rgba(11, 255, 0, 0.9), 2px 2px 14px rgba(11, 255, 0, .8);
     }
   }
 
