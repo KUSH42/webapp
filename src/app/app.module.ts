@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SlavesComponent } from './slaves/slaves.component';
+import { MatrixBackgroundCanvasComponent } from './matrix-background-canvas/matrix-background-canvas.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SlavesComponent
+    SlavesComponent,
+    MatrixBackgroundCanvasComponent
   ],
   imports: [
     BrowserModule,

@@ -1,37 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
-/* Application-wide Styles */
-h1 {
+  /* You can add global styles to this file, and also import other style files */
+
+  /* Application-wide Styles */
+
+  h1 {
     color: rgba(30, 255, 0, 0.39);
     font-family: "Lucida Console", Arial, Helvetica, sans-serif;
     font-size: 250%;
   }
+
   h2, h3 {
     color: #444;
     font-family: "Lucida Console", Arial, Helvetica, sans-serif;
     font-weight: lighter;
   }
+
   body {
     background-color: rgba(0, 0, 0, 0.85);
     margin: 2em;
   }
+
   body, input[text], button {
     color: #888;
     font-family: Cambria, Georgia;
   }
+
   a:hover {
     color: #33FF00;
   }
 
-  canvas {
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:-1;
+  .pulse {
+    -webkit-animation: pulse 2s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.3;
+  }
+
+  @-webkit-keyframes pulse {
+    0% {
+      opacity: 0.3;
     }
+    50% {
+      opacity: 1.0;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
 
   /* everywhere else */
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
-
-  
