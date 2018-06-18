@@ -4,7 +4,11 @@ h1 {
     font-size: 250%;
     margin: auto;
     padding-left: 3em;
+<<<<<<< HEAD
     padding-top: 1em;
+=======
+    top: .5em;
+>>>>>>> 13d323129f22d0f78081a46f8d7e9c4a08422cdd
     right: 0;
     left: 0;
 }
