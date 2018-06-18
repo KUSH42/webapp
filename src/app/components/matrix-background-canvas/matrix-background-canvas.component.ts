@@ -15,7 +15,7 @@ export class MatrixBackgroundCanvasComponent implements AfterViewInit {
   initDone = false;
   initDoneDone = false;
 
-  constructor(private el: ElementRef) { }
+  constructor() { }
 
   @ViewChild('canvas') canvas: ElementRef;
   // canvas context
