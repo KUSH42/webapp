@@ -1,0 +1,55 @@
+app-matrix-background-canvas {
+  width: 8em;
+  height: 100%;
+  animation: bluranim 5s ease-in;
+  filter: blur(2px);
+}
+
+ul {
+  box-shadow: inset -90px -5px 40px -100px rgba(51, 255, 0, 1);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8em;
+  height: 100%;
+  list-style-type: none;
+}
+
+
+li {
+  width: 100%;
+  float: left;
+}
+
+li a {
+  font-family: Syncopate;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: .5em 1em;
+  text-decoration: none;
+}
+
+li a:hover {
+  box-shadow: inset -90px -5px 50px -90px rgba(51, 255, 0, .75);
+  background-color: rgba(100, 100, 100, .25);
+}
+
+.active {
+  background: linear-gradient(to right, rgba(51, 255, 0, .2), rgba(51, 255, 0, .5));
+}
+
+@keyframes bluranim {
+  0% {
+    filter: blur(0px);
+  }
+  75% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(2px);
+  }
+}

@@ -1,35 +1,25 @@
   /* You can add global styles to this file, and also import other style files */
 
   /* Application-wide Styles */
-
-  h1 {
-    color: #33FF00;
-    font-family: "Lucida Console", Arial, Helvetica, sans-serif;
-    font-size: 250%;
-  }
-
-  h2, h3 {
-    color: #444;
-    font-family: "Lucida Console", Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-  }
-
+  
   body {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 1);
     margin: 2em;
+    overflow:hidden;
   }
 
-  body, input[text], button {
-    color: #888;
-    font-family: Cambria, Georgia;
-  }
-
-  a:hover {
-    color: #33FF00;
+  .fadein {
+    animation: fadein 5s ease alternate;
   }
 
   .pulse {
-    animation: pulse 8s ease alternate infinite, fadein 8s ease alternate;
+    animation: pulse 8s ease alternate infinite;
+    margin: auto;
+    padding-left: 3em;
+    top: .5em; right: 0; left: 0;
+  }
+  .pulse:after{
+    filter: blur(30px);
   }
 
   @keyframes fadein {
