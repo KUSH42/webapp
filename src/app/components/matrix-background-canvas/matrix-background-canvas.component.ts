@@ -24,7 +24,7 @@ export class MatrixBackgroundCanvasComponent implements AfterViewInit {
   @HostListener('window:resize', ['$event'])
   sizeChange(event) {
     // get current image
-    const imgData = this.ctx.getImageData(0, 0, window.innerWidth, window.innerHeight);
+    const imgData = this.ctx.getImageData(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
     // init new drops array with correct size
     // set canvas to full size
     this.canvas.nativeElement.height = this.canvas.nativeElement.offsetHeight;
@@ -116,7 +116,7 @@ export class MatrixBackgroundCanvasComponent implements AfterViewInit {
       }
       // when init is done+1s, repaint after and before trails to clean up artifacts 
       if (this.initDoneDone) {
-        this.ctx.fillStyle = 'rgb(0, 0, 0, 1)';
+        this.ctx.fillStyle = 'rgba(0, 0, 0, 1)';
         this.ctx.fillRect(i * this.font_size, ((this.drops[i] - 48) * this.font_size), this.font_size, this.font_size + random + .5);
         if (this.drops[i] < 96 && this.canvas.nativeElement.height > this.font_size * 96) {
           this.ctx.fillRect(i * this.font_size, this.canvas.nativeElement.height - ((96 - this.drops[i]) * this.font_size),

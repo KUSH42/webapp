@@ -1,4 +1,7 @@
 app-matrix-background-canvas {
+  position: absolute;
+  top:0;
+  left:0;
   width: 8em;
   height: 100%;
   animation: bluranim 5s ease-in;
