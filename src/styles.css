@@ -1,49 +1,30 @@
   /* You can add global styles to this file, and also import other style files */
 
   /* Application-wide Styles */
-  
+
   body {
     background-color: rgba(0, 0, 0, 1);
-    overflow:hidden;
+    overflow: hidden;
   }
 
   .fadein {
     animation: fadein 5s ease alternate;
   }
 
-  .pulse {
-    animation: pulse 8s ease alternate infinite;
-    margin: auto;
-    padding-left: 3em;
-    top: .5em; right: 0; left: 0;
-  }
-  .pulse:after{
-    filter: blur(30px);
-  }
-
   @keyframes fadein {
-    0% { opacity: 0;}
-    75% { opacity: 0;}
-    100%   { opacity: 1;}
-}
-
-  @keyframes pulse {
     0% {
-      transform: translate(.02em,.04em) scale(1.02) skew(-2deg) rotate(2deg);
-      text-shadow:
-      0 .3em .2em rgba(0,0,0,.3), 4px 8px 40px rgba(0, 255, 0, 1.0), 2px 2px 18px rgba(33, 255, 0, 0.9);
+      opacity: 0;
     }
-    50% {
-      text-shadow:
-      0 .5em .5em rgba(0,0,0,.3), -10px 2px 50px rgba(33, 255, 0, 0.95), 2px 2px 16px rgba(0, 255, 0, .85);
+    75% {
+      opacity: 0;
     }
     100% {
-      transform: translate(-.02em,-.04em) scale(0.98) skew(2deg) rotate(-2deg);
-      text-shadow:     0 .5em .5em rgba(0,0,0,.3), 6px -2px 40px rgba(11, 255, 0, 0.9), 2px 2px 14px rgba(11, 255, 0, .8);
+      opacity: 1;
     }
   }
 
   /* everywhere else */
+
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
