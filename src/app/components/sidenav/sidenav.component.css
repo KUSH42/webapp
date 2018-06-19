@@ -25,6 +25,13 @@ li {
   float: left;
 }
 
+li:hover {
+  box-shadow: inset -90px -5px 50px -90px rgba(51, 255, 0, .65);
+  background-color: rgba(100, 100, 100, .25);
+  width: 100%;
+  float: left;
+}
+
 li a {
   font-family: Syncopate, "Lucida Console", Arial, Helvetica, sans-serif;
   display: block;
@@ -32,12 +39,11 @@ li a {
   text-align: center;
   padding: .5em 1em;
   text-decoration: none;
+  transition: all 1s;
 }
 
 li a:hover {
-  box-shadow: inset -90px -5px 50px -90px rgba(51, 255, 0, .65);
-  font-style: italic;
-  background-color: rgba(100, 100, 100, .25);
+  transform: skewX(-20deg);
 }
 
 .active {
