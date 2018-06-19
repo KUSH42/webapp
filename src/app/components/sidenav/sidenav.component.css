@@ -30,6 +30,7 @@ li:hover {
   background-color: rgba(100, 100, 100, .25);
   width: 100%;
   float: left;
+
 }
 
 li a {
@@ -39,7 +40,7 @@ li a {
   text-align: center;
   padding: .5em 1em;
   text-decoration: none;
-  transition: all 1s;
+  transition: transform 1s, font-weight 1s;
 }
 
 li a:hover {
