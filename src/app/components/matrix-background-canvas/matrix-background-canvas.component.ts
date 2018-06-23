@@ -3,7 +3,7 @@ import { AfterViewInit, Component, ViewChild, ElementRef, HostListener } from '@
 @Component({
   selector: 'app-matrix-background-canvas',
   templateUrl: './matrix-background-canvas.component.html',
-  styleUrls: ['./matrix-background-canvas.component.css']
+  styleUrls: ['./matrix-background-canvas.component.scss']
 })
 export class MatrixBackgroundCanvasComponent implements AfterViewInit {
 
