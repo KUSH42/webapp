@@ -10,12 +10,16 @@ export class MatrixBackgroundCanvasComponent implements AfterViewInit {
   drops: number[];
   font_size = 8;
   // random characters - taken from the unicode charset
-  chars = '漢字は日本語で使われる文字で中国からやってきました。ひらがなとカタカナは日本で作られました©®¶$#!(*<=>?@¥ͶΔΛΞΠΣΩΨΧ☺ت0123456798ABCDEF田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑';
+  chars: '漢字は日本語で使われる文字で中国からやってきました。ひらがなとカタカナは日本で作られました©®¶$#!(*<=>?@¥ͶΔΛΞΠΣΩΨΧ☺ت0123456798ABCDEF田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑'
   charsA: string[];
+  // array of colors to randomize characters with
+  colors = ['#0F0', '#0F0', '#2F0', '#0F2', '#0A3', '#181', '#1A0', '#0A0', '#020', '#1F3'];
   initDone = false;
   initDoneDone = false;
 
-  constructor() { }
+  constructor() {
+    this.charsA = this.chars.split('');
+  }
 
   @ViewChild('canvas') canvas: ElementRef;
   // canvas context
@@ -67,8 +71,6 @@ export class MatrixBackgroundCanvasComponent implements AfterViewInit {
     this.canvas.nativeElement.width = this.canvas.nativeElement.offsetWidth;
     this.ctx.fillStyle = 'rgba(0, 0, 0, 1)';
     this.ctx.fillRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
-    // converting the string into an array of single characters
-    this.charsA = this.chars.split('');
 
     const columns = this.canvas.nativeElement.width / this.font_size; // number of columns for the rain
     // an array of drops - one per column
@@ -92,14 +94,12 @@ export class MatrixBackgroundCanvasComponent implements AfterViewInit {
     // translucent BG to show trail
     this.ctx.fillStyle = 'rgba(0, 0, 0, 0.03)';
     this.ctx.fillRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
-    // array of colors to randomize characters with
-    const colors = ['#0F0', '#0F0', '#2F0', '#0F2', '#0A3', '#181', '#1A0', '#0A0', '#020', '#1F3'];
     this.ctx.font = this.font_size + 'px \'Courier New\'';
     // looping over drops
     for (let i = 0; i < this.drops.length; i++) {
       let random = Math.random();
       // a random character to print
-      this.ctx.fillStyle = colors[(i + Math.floor(random * colors.length)) % colors.length]; // green text
+      this.ctx.fillStyle = this.colors[(i + Math.floor(random * this.colors.length)) % this.colors.length]; // green text
       const text = this.charsA[Math.floor(random * this.charsA.length)];
 
       // x = i*font_size, y = value of drops[i]*font_size
@@ -114,7 +114,7 @@ export class MatrixBackgroundCanvasComponent implements AfterViewInit {
       if (!this.initDone) {
         random = 1;
       }
-      // when init is done+1s, repaint after and before trails to clean up artifacts 
+      // when init is done + 1s, repaint after and before trails to clean up artifacts
       if (this.initDoneDone) {
         this.ctx.fillStyle = 'rgba(0, 0, 0, 1)';
         this.ctx.fillRect(i * this.font_size, ((this.drops[i] - 48) * this.font_size), this.font_size, this.font_size + random + .5);
@@ -127,5 +127,3 @@ export class MatrixBackgroundCanvasComponent implements AfterViewInit {
     }
   }
 }
-
-
