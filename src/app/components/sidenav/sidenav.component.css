@@ -1,0 +1,65 @@
+app-matrix-background-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8em;
+    height: 100%;
+    animation: bluranim 5s ease-in;
+    filter: blur(2px);
+  }
+  
+  ul {
+    box-shadow: inset -90px -5px 40px -100px rgba(51, 255, 0, 1);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8em;
+    height: 100%;
+  }
+  
+  li {
+    width: 100%;
+    float: left;
+  }
+  
+  li:hover {
+    box-shadow: inset -90px -5px 50px -90px rgba(51, 255, 0, .65);
+    background-color: rgba(100, 100, 100, .25);
+    width: 100%;
+    float: left;
+  
+  }
+  
+  li a {
+    font-family: Syncopate, "Lucida Console", Arial, Helvetica, sans-serif;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: .5em 1em;
+    text-decoration: none;
+    transition: transform 1s, font-weight 1s;
+  }
+  
+  li a:hover {
+    transform: skewX(-20deg);
+  }
+  
+  .active {
+    background: linear-gradient(to right, rgba(51, 255, 0, .1), rgba(51, 255, 0, .5));
+    font-weight: bold;
+  }
+  
+  @keyframes bluranim {
+    0% {
+      filter: blur(0px);
+    }
+    75% {
+      filter: blur(0px);
+    }
+    100% {
+      filter: blur(2px);
+    }
+  }

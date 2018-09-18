@@ -3,14 +3,14 @@ import { AfterViewInit, Component, ViewChild, ElementRef, HostListener } from '@
 @Component({
   selector: 'app-matrix-background-canvas',
   templateUrl: './matrix-background-canvas.component.html',
-  styleUrls: ['./matrix-background-canvas.component.scss']
+  styleUrls: ['./matrix-background-canvas.component.css']
 })
 export class MatrixBackgroundCanvasComponent implements AfterViewInit {
 
   drops: number[];
   font_size = 8;
   // random characters - taken from the unicode charset
-  chars: '漢字は日本語で使われる文字で中国からやってきました。ひらがなとカタカナは日本で作られました©®¶$#!(*<=>?@¥ͶΔΛΞΠΣΩΨΧ☺ت0123456798ABCDEF田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑';
+  chars: string;
   charsA: string[];
   // array of colors to randomize characters with
   colors = ['#0F0', '#0F0', '#2F0', '#0F2', '#0A3', '#181', '#1A0', '#0A0', '#020', '#1F3'];
@@ -18,6 +18,7 @@ export class MatrixBackgroundCanvasComponent implements AfterViewInit {
   initDoneDone = false;
 
   constructor() {
+    this.chars = '漢字は日本語で使われる文字で中国からやってきました。ひらがなとカタカナは日本で作られました©®¶$#!(*<=>?@¥ͶΔΛΞΠΣΩΨΧ☺ت0123456798ABCDEF田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑';
     this.charsA = this.chars.split('');
   }
 
