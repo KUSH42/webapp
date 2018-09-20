@@ -8,7 +8,7 @@
   }
 
   .fadein {
-    animation: fadein 5s ease alternate;
+    animation: fadein 1s ease alternate;
   }
 
   @keyframes fadein {

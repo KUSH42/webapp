@@ -34,6 +34,7 @@ app-matrix-background-canvas {
   }
   
   li a {
+    overflow: hidden;
     font-family: Syncopate, "Lucida Console", Arial, Helvetica, sans-serif;
     display: block;
     color: white;
@@ -46,8 +47,11 @@ app-matrix-background-canvas {
   li a:hover {
     transform: skewX(-20deg);
   }
-  
+
   .active {
+    position: relative;
+    right: 5em;
+    width: 200%;
     background: linear-gradient(to right, rgba(51, 255, 0, .1), rgba(51, 255, 0, .5));
     font-weight: bold;
   }
